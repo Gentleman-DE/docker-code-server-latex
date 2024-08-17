@@ -12,7 +12,7 @@ services:
       - HASHED_PASSWORD= #optional
       - SUDO_PASSWORD= #optional
       - SUDO_PASSWORD_HASH= #optional
-      #- PROXY_DOMAIN=tex.lachscloud.com #optional
+      #- PROXY_DOMAIN=#optional
       - DEFAULT_WORKSPACE=/tex #optional
     volumes:
       - ./config:/config
