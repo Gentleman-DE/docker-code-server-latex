@@ -1,0 +1,22 @@
+services:
+  code-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-code-server-latex 
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Germany
+      - PASSWORD= #optional
+      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD= #optional
+      - SUDO_PASSWORD_HASH= #optional
+      #- PROXY_DOMAIN=tex.lachscloud.com #optional
+      - DEFAULT_WORKSPACE=/tex #optional
+    volumes:
+      - ./config:/config
+      - ./tex:/tex
+    ports:
+      - 8469:8443
+    restart: unless-stopped
